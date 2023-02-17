@@ -2,6 +2,7 @@ const config = require('config')
 const sql = require('mssql')
 const {Router} = require('express')
 const router = Router()
+const cors = require('cors')
 
 // const commission = [
 //     {
@@ -66,6 +67,7 @@ const router = Router()
 // /api/commission/add
 router.post(
     '/add',
+    cors(),
     async (req, res) => {  
         try {
             const {newCommission} = await req.body
@@ -101,6 +103,7 @@ router.post(
 // /api/commission/get
 router.get(
     '/get',
+    cors(),
     async (req, res) => {  
         try {
             await sql.connect(config.get('configsql'))
@@ -132,6 +135,7 @@ router.get(
 // /api/commission/getone
 router.get(
     '/getone',
+    cors(),
     async (req, res) => {  
         try {
             await sql.connect(config.get('configsql'))

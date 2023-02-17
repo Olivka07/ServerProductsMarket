@@ -28,6 +28,7 @@ const cors = require('cors')
 // /api/products/add
 router.post(
     '/add',
+    cors(),
     async (req, res) => {
         try {
             const {newProduct} = await req.body
@@ -68,6 +69,7 @@ router.post(
 // /api/products/delete
 router.delete(
     '/delete',
+    cors(),
     async (req, res) => {
         try {
             const {idProduct} = await req.body
@@ -133,6 +135,7 @@ router.get(
 // /api/products/deploy
 router.get(
     '/deploy',
+    cors(),
     async (req, res) => {
         try {
             await sql.connect(config.get('configsql'))
@@ -149,6 +152,7 @@ router.get(
 // /api/products/filter
 router.post(
     '/filter',
+    cors(),
     async (req, res) => {
         try {
             const {minprice, maxprice, idcategorys} = req.body

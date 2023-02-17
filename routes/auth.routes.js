@@ -3,6 +3,7 @@ const sql = require('mssql')
 const jwt = require('jsonwebtoken')
 const {Router} = require('express')
 const router = Router()
+const cors = require('cors')
 
 const users = [
     {
@@ -32,6 +33,7 @@ const users = [
 // /api/auth/register
 router.post(
     '/register', 
+    cors(),
     async (req, res) => {
     try {
         const {login, password, name, surname, patron, address, birthdate} = await req.body
@@ -93,6 +95,7 @@ router.post(
 // /api/auth/login
 router.post(
     '/login',
+    cors(),
     async (req, res) => {
     try {
 

@@ -2,6 +2,7 @@ const {Router} = require('express')
 const sql = require('mssql')
 const router = Router()
 const config = require('config')
+const cors = require('cors')
 
 // const categories = [
 //     {
@@ -25,6 +26,7 @@ const config = require('config')
 // /api/categories/add
 router.post(
     '/add',
+    cors(),
     async (req, res) => {
         try {
             await sql.connect(config.get('configsql'))
@@ -49,6 +51,7 @@ router.post(
 // /api/categories/get
 router.get(
     '/get',
+    cors(),
     async (req, res) => {
         try {
             await sql.connect(config.get('configsql'))
