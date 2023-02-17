@@ -1,0 +1,16 @@
+{
+    "port": 5000,
+    "configsql": {
+        "user": "db_a94809_products_admin",
+        "password": "test1234",
+        "server": "SQL8003.site4now.net",
+        "database": "db_a94809_products",
+        "options": {
+            "trustedConnection": true,
+            "enableArithAbort": true,
+            "instancename": "",
+            "trustServerCertificate": true
+        }
+    },
+    "jwtSecret": "c.ronaldo is the best player in the world"
+} 
