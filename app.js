@@ -1,12 +1,14 @@
 const express = require('express')
 const config = require('config')
 const sql = require('mssql')
-
-
+const cors = require('cors')
 
 
 const app = express()
 
+app.use(cors({
+    origin: ["http://localhost:3000"]
+}))
 
 //
  

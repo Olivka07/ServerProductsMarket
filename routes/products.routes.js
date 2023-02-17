@@ -2,6 +2,7 @@ const config = require('config')
 const sql = require('mssql')
 const {Router} = require('express')
 const router = Router()
+const cors = require('cors')
 
 // let products = [
 //     {
@@ -100,6 +101,7 @@ router.delete(
 // /api/products/get
 router.get(
     '/get',
+    cors(),
     async (req, res) => {
         try {
             await sql.connect(config.get('configsql'))
